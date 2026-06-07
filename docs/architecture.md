@@ -10,35 +10,35 @@ ThreatHunt is deployed on AWS using a multi-tier architecture with separated pub
 
 ```
                         ┌─────────────────────────────────────┐
-                        │              Internet                │
+                        │              Internet               │
                         └──────────────────┬──────────────────┘
                                            │
                         ┌──────────────────▼──────────────────┐
-                        │     Application Load Balancer (ALB)  │
-                        │         HTTP / HTTPS traffic         │
+                        │     Application Load Balancer (ALB) │
+                        │         HTTP / HTTPS traffic        │
                         └──────────┬───────────────┬──────────┘
                                    │               │
                ┌───────────────────▼──┐    ┌───────▼───────────────────┐
-               │   EC2 WebInstance A  │    │   EC2 WebInstance B        │
-               │   t4g.medium (ARM)   │    │   t4g.medium (ARM)         │
-               │   Public subnet      │    │   Public subnet            │
-               │   Flask + Frontend   │    │   Flask + Frontend         │
+               │   EC2 WebInstance A  │    │   EC2 WebInstance B       │
+               │   t4g.medium (ARM)   │    │   t4g.medium (ARM)        │
+               │   Public subnet      │    │   Public subnet           │
+               │   Flask + Frontend   │    │   Flask + Frontend        │
                └──────────┬───────────┘    └───────────┬───────────────┘
-                          │                             │
-               ┌──────────▼─────────────────────────────▼──────────────┐
-               │                 Private Subnets                        │
-               │                                                        │
-               │  ┌──────────────────┐    ┌──────────────────┐         │
-               │  │  MongoDB Primary  │◄──►│ MongoDB Secondary │         │
-               │  │  EC2 t4g.medium  │    │  EC2 t4g.medium  │         │
-               │  │  Replica Set     │    │  Replica Set     │         │
-               │  └──────────────────┘    └──────────────────┘         │
-               │                                                        │
-               │  ┌──────────────────┐                                  │
-               │  │   S3 Bucket      │  AES-256 · versioning            │
-               │  │   (backups)      │                                  │
-               │  └──────────────────┘                                  │
-               └────────────────────────────────────────────────────────┘
+                          │                            │
+               ┌──────────▼────────────────────────────▼──────────────┐
+               │                 Private Subnets                      │
+               │                                                      │
+               │  ┌──────────────────┐    ┌───────────────────┐       │
+               │  │  MongoDB Primary │◄──►│ MongoDB Secondary │       │
+               │  │  EC2 t4g.medium  │    │  EC2 t4g.medium   │       │
+               │  │  Replica Set     │    │  Replica Set      │       │
+               │  └──────────────────┘    └───────────────────┘       │
+               │                                                      │
+               │  ┌──────────────────┐                                │
+               │  │   S3 Bucket      │  AES-256 · versioning          │
+               │  │   (backups)      │                                │
+               │  └──────────────────┘                                │
+               └──────────────────────────────────────────────────────┘
 ```
 
 ---
