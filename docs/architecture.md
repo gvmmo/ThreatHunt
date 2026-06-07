@@ -10,24 +10,24 @@ ThreatHunt is deployed on AWS using a multi-tier architecture with separated pub
  
 ```mermaid
 graph TD
-    Internet([🌐 Internet]) --> ALB
+    Internet([Internet]) --> ALB
  
-    subgraph AWS ["☁️ AWS Cloud"]
-        ALB["⚖️ Application Load Balancer\nHTTP / HTTPS"]
+    subgraph AWS ["AWS Cloud"]
+        ALB["Application Load Balancer\nHTTP / HTTPS"]
  
         subgraph Public ["Public Subnets"]
-            WebA["🖥️ EC2 WebInstance A\nt4g.medium · Graviton2\nFlask + Frontend"]
-            WebB["🖥️ EC2 WebInstance B\nt4g.medium · Graviton2\nFlask + Frontend"]
+            WebA["EC2 WebInstance A\nt4g.medium · Graviton2\nFlask + Frontend"]
+            WebB["EC2 WebInstance B\nt4g.medium · Graviton2\nFlask + Frontend"]
         end
  
         subgraph Private ["Private Subnets"]
-            MongoPrimary["🗄️ MongoDB Primary\nEC2 t4g.medium\nReplica Set"]
-            MongoSecondary["🗄️ MongoDB Secondary\nEC2 t4g.medium\nReplica Set"]
+            MongoPrimary["MongoDB Primary\nEC2 t4g.medium\nReplica Set"]
+            MongoSecondary["MongoDB Secondary\nEC2 t4g.medium\nReplica Set"]
             S3["🪣 S3 Bucket\nAES-256 · Versioning\nBackups"]
         end
  
         subgraph Monitoring ["Monitoring"]
-            CloudWatch["📊 CloudWatch\nCPU · Latency alarms"]
+            CloudWatch["CloudWatch\nCPU · Latency alarms"]
         end
     end
  
@@ -94,8 +94,8 @@ Security groups per tier:
  
 ```mermaid
 flowchart LR
-    Request["📨 POST /api/scan/start"] --> Validate["✅ Validate\ntarget & config"]
-    Validate --> AutoRecon["⚙️ AutomatedRecon\norchestrator"]
+    Request["POST /api/scan/start"] --> Validate["Validate\ntarget & config"]
+    Validate --> AutoRecon["AutomatedRecon\norchestrator"]
  
     AutoRecon --> Tools
  
@@ -109,10 +109,10 @@ flowchart LR
         T7["Hunter.how"]
     end
  
-    Tools --> Normalise["📐 Normalise\nresults per asset"]
-    Normalise --> MongoDB["🗄️ MongoDBHandler\nstore results"]
-    MongoDB --> Report["📄 Generate\nHTML report"]
-    Report --> Done["✅ COMPLETED"]
+    Tools --> Normalise["Normalise\nresults per asset"]
+    Normalise --> MongoDB["MongoDBHandler\nstore results"]
+    MongoDB --> Report["Generate\nHTML report"]
+    Report --> Done["COMPLETED"]
  
     style Tools fill:#0f3460,stroke:#4a9eff,color:#fff
 ```
