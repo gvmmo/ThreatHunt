@@ -112,10 +112,10 @@ Each tool is implemented as an independent Python class following a common inter
 ### MongoDB data model
 
 ```
-scans           → scan metadata, status, timestamps, config
-assets          → discovered assets per scan (subdomains, IPs, services)
-relationships   → links between assets
-users           → user accounts, hashed passwords, API keys per tool
+scans → scan metadata, status, timestamps, config
+assets → discovered assets per scan (subdomains, IPs, services)
+relationships → links between assets
+users → user accounts, hashed passwords, API keys per tool
 ```
 
 ---
