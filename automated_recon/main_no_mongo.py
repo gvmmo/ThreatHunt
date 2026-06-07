@@ -1,0 +1,360 @@
+import os
+import json
+from typing import Dict, List, Any, Optional, Set
+from datetime import datetime
+from dotenv import load_dotenv
+from collections import defaultdict
+
+# Import all tool modules
+from automated_recon.shodan.script_shodan import ShodanScanner
+from automated_recon.nmap.script_nmap import NmapScanner
+from automated_recon.dnsrecon.dnsrecon import DNSReconWrapper
+from automated_recon.virustotal.virustotal import Virustotal
+from automated_recon.nuclei.nuclei import Nuclei
+from automated_recon.nikto.nikto import NiktoScanner
+from automated_recon.wappalyzer.script_wappalyzer import WappalyzerScanner
+from automated_recon.whois.whois import WhoisTool
+from automated_recon.crt_sh.crt_sh import Crtsh
+from automated_recon.subfinder.subfinder import Subfinder
+from automated_recon.cloudenum.cloudenum import CloudEnumScanner
+from automated_recon.gobuster.gobuster import Gobuster
+from automated_recon.google_dorks.google_dorks import GoogleDorker
+from automated_recon.intelx.intelx import IntelXScanner
+
+class AutomatedRecon:
+    def __init__(self, target: str, target_type: str, scan_type: str = "passive", tools: List[str] = None):
+        """
+        Initialize the automated reconnaissance system.
+        
+        Args:
+            target (str): The target to scan (IP, domain, or organization name)
+            target_type (str): Type of target ('ip', 'domain', 'organization')
+            scan_type (str): Type of scan ('passive' or 'active')
+            tools (List[str]): List of tools to use. If None, uses all available tools
+        """
+        # Load environment variables
+        load_dotenv()
+        
+        # Load API keys
+        self.shodan_api_key = os.getenv('SHODAN_API_KEY')
+        self.vt_api_key = os.getenv('VT_API_KEY')
+        self.intelx_api_key = os.getenv('INTELX_API_KEY')
+        self.google_api_key = os.getenv('GOOGLE_API_KEY')
+        self.google_cx_id = os.getenv('GOOGLE_CX_ID')
+        self.whois_api_key = os.getenv('WHOIS_API_KEY')
+        
+        # Validate required API keys
+        if 'shodan' in tools and not self.shodan_api_key:
+            raise ValueError("SHODAN_API_KEY is required for Shodan scans")
+        if 'virustotal' in tools and not self.vt_api_key:
+            raise ValueError("VT_API_KEY is required for VirusTotal scans")
+        if 'intelx' in tools and not self.intelx_api_key:
+            raise ValueError("INTELX_API_KEY is required for IntelX scans")
+        if 'google_dorks' in tools and not (self.google_api_key and self.google_cx_id):
+            raise ValueError("GOOGLE_API_KEY and GOOGLE_CX_ID are required for Google Dorks")
+        if 'whois' in tools and not self.whois_api_key:
+            raise ValueError("WHOIS_API_KEY is required for WHOIS lookups")
+        
+        self.target = target
+        self.target_type = target_type
+        self.scan_type = scan_type
+        self.tools = tools or self._get_all_tools()
+        
+        # Initialize results structure with asset-centric design
+        self.results = {
+            'scan_info': {
+                'target': target,
+                'target_type': target_type,
+                'scan_type': scan_type,
+                'timestamp': datetime.now().isoformat(),
+                'status': 'running',
+                'tools_used': self.tools
+            },
+            'assets': {},  # Will store all discovered assets
+            'relationships': [],  # Will store relationships between assets
+            'raw_results': {}  # Will store raw tool outputs
+        }
+        
+        # Initialize tracking sets
+        self.discovered_assets = set()  # Track all discovered assets
+        self.processed_assets = set()  # Track processed assets
+        
+        # Initialize tools with API keys
+        if 'shodan' in self.tools:
+            self.shodan = ShodanScanner(self.shodan_api_key)
+        if 'nmap' in self.tools:
+            self.nmap = NmapScanner(target)
+        if 'dnsrecon' in self.tools:
+            self.dnsrecon = DNSReconWrapper()
+        if 'virustotal' in self.tools:
+            self.virustotal = Virustotal(self.vt_api_key)
+        if 'nuclei' in self.tools:
+            self.nuclei = Nuclei(target)
+        if 'nikto' in self.tools:
+            self.nikto = NiktoScanner({'target': target})
+        if 'wappalyzer' in self.tools:
+            self.wappalyzer = WappalyzerScanner()
+        if 'whois' in self.tools:
+            self.whois = WhoisTool(target, self.whois_api_key)
+        if 'crt_sh' in self.tools:
+            self.crt_sh = Crtsh(target)
+        if 'subfinder' in self.tools:
+            self.subfinder = Subfinder(target)
+        if 'cloudenum' in self.tools:
+            self.cloudenum = CloudEnumScanner()
+        if 'gobuster' in self.tools:
+            self.gobuster = Gobuster(target)
+        if 'google_dorks' in self.tools:
+            self.google_dorks = GoogleDorker(target, self.google_api_key, self.google_cx_id)
+        if 'intelx' in self.tools:
+            self.intelx = IntelXScanner(target, self.intelx_api_key)
+
+    def _get_all_tools(self) -> List[str]:
+        """Get list of all available tools."""
+        return [
+            'shodan', 'nmap', 'cloudenum', 'crt_sh', 'dnsrecon',
+            'gobuster', 'google_dorks', 'intelx', 'nikto', 'nuclei',
+            'subfinder', 'virustotal', 'wappalyzer', 'whois'
+        ]
+
+    def _create_asset(self, identifier: str, asset_type: str, source: str, parent_asset: str = None) -> Dict[str, Any]:
+        """Create a new asset entry in the results structure."""
+        asset = {
+            'identifier': identifier,
+            'type': asset_type,
+            'discovery_context': {
+                'source': source,
+                'parent_asset': parent_asset,
+                'discovery_timestamp': datetime.now().isoformat()
+            },
+            'osint_data': {
+                'dns': {},
+                'certificates': {},
+                'web_technologies': {},
+                'shodan': {},
+                'virustotal': {},
+                'whois': {}
+            },
+            'relationships': [],
+            'metadata': {
+                'last_scan': datetime.now().isoformat()
+            }
+        }
+        
+        # Add to results
+        self.results['assets'][identifier] = asset
+        
+        # Add relationship if parent asset exists
+        if parent_asset:
+            self._add_relationship(identifier, parent_asset, 'discovered_from')
+        
+        return asset
+
+    def _add_relationship(self, source_asset: str, target_asset: str, relationship_type: str, evidence: str = None) -> None:
+        """Add a relationship between two assets."""
+        relationship = {
+            'source': source_asset,
+            'target': target_asset,
+            'type': relationship_type,
+            'evidence': evidence,
+            'timestamp': datetime.now().isoformat()
+        }
+        
+        # Add to relationships list
+        self.results['relationships'].append(relationship)
+        
+        # Add to both assets' relationship lists
+        if source_asset in self.results['assets']:
+            self.results['assets'][source_asset]['relationships'].append(relationship)
+        if target_asset in self.results['assets']:
+            self.results['assets'][target_asset]['relationships'].append(relationship)
+
+    def _process_domain_asset(self, asset: Dict[str, Any], is_initial_target: bool = False  ) -> None:
+        """Process a domain asset with all applicable tools.""" 
+        domain = asset['identifier']
+        
+        # WHOIS information
+        if 'whois' in self.tools:
+            whois_results = self.whois.process_domain(domain)
+            if whois_results:
+                asset['osint_data']['whois'] = whois_results
+                
+                # Add relationships for nameservers
+                for ns in whois_results.get('name_servers', []):
+                    self._add_relationship(domain, ns, 'nameserver', 'WHOIS data')
+        
+        # DNS records
+        if 'dnsrecon' in self.tools:
+            output_file = self.dnsrecon.run_dnsrecon(domain)
+            dns_results = self.dnsrecon.parse_findings(output_file)
+            if dns_results:
+                asset['osint_data']['dns'] = dns_results
+                
+                # Process and add relationships for DNS records
+                for record_type, records in dns_results.get('records', {}).items():
+                    for record in records:
+                        if record_type == 'a':
+                            self._add_relationship(domain, record['address'], 'resolves_to', 'DNS A record')
+                        elif record_type == 'cname':
+                            self._add_relationship(domain, record['target'], 'aliases_to', 'DNS CNAME record')
+
+        # Certificate transparency
+        if 'crt_sh' in self.tools:
+            crt_results_file = self.crt_sh.download_certificates()
+            if crt_results_file:
+                with open(crt_results_file, 'r') as f:
+                    crt_results = json.load(f)
+                    asset['osint_data']['certificates'] = crt_results
+                
+                # Add relationships for certificate subjects
+                for cert in crt_results:
+                    if 'name_value' in cert:
+                        self._add_relationship(domain, cert['name_value'], 'has_certificate', 'Certificate transparency')
+        
+        # Web technologies
+        if 'wappalyzer' in self.tools:
+            wapp_results = self.wappalyzer.process_domain(domain)
+            if wapp_results and 'results' in wapp_results:
+                # Extract technologies and format as "techname":"version"
+                technologies = {}
+                for tech_name, tech_data in wapp_results['results'].get('technologies', {}).items():
+                    version = tech_data.get('versions', ['unknown'])[0] if tech_data.get('versions') else 'unknown'
+                    technologies[tech_name] = version
+                
+                asset['osint_data']['web_technologies'] = technologies
+        
+        # VirusTotal
+        if 'virustotal' in self.tools:
+            vt_results = self.virustotal.get_relationships(domain)
+            if vt_results:
+                asset['osint_data']['virustotal'] = vt_results
+                
+                # Add relationships from VT data
+                for rel_type, rel_data in vt_results.items():
+                    if isinstance(rel_data, dict) and 'data' in rel_data:
+                        for item in rel_data['data']:
+                            item_id = item.get('id', '')
+                            if item_id:
+                                self._add_relationship(domain, item_id, rel_type, 'VirusTotal data')
+        
+        # Subdomain discovery - only run on initial target domain
+        if 'subfinder' in self.tools and is_initial_target:
+            subfinder_results = self.subfinder.run_subfinder()
+            if subfinder_results:
+                # Process each discovered subdomain as a new asset
+                for subdomain_data in subfinder_results:
+                    if isinstance(subdomain_data, dict) and 'host' in subdomain_data:
+                        subdomain = subdomain_data['host']
+                        # Create new asset for the subdomain if it doesn't exist
+                        if subdomain not in self.results['assets']:
+                            self._create_asset(subdomain, 'domain', 'subfinder', domain)
+                            # Add relationship between parent domain and subdomain
+                            self._add_relationship(domain, subdomain, 'has_subdomain', 'Subfinder discovery')
+                            # Process the new subdomain asset (without running subfinder)
+                            self._process_domain_asset(subdomain, 'domain', 'subfinder', domain)
+
+    def _process_ip_asset(self, asset: Dict[str, Any]) -> None:
+        """Process an IP asset with all applicable tools."""
+        ip = asset['identifier']
+        
+        # Shodan data
+        if 'shodan' in self.tools:
+            shodan_results = self.shodan.scan_host(ip)
+            if shodan_results:
+                asset['osint_data']['shodan'] = shodan_results
+                
+                # Add relationships for domains
+                for domain in shodan_results.get('domains', []):
+                    self._add_relationship(ip, domain, 'hosts', 'Shodan data')
+        
+        # VirusTotal
+        if 'virustotal' in self.tools:
+            vt_results = self.virustotal.scan_ip(ip)
+            if vt_results:
+                asset['osint_data']['virustotal'] = vt_results
+                
+                # Add relationships from VT data
+                for rel_type, rels in vt_results.get('relationships', {}).items():
+                    for rel in rels:
+                        self._add_relationship(ip, rel, rel_type, 'VirusTotal data')
+        
+        # Active scanning if enabled
+        if self.scan_type == 'active':
+            if 'nmap' in self.tools:
+                nmap_results = self.nmap.scan_host(ip)
+                if nmap_results:
+                    asset['osint_data']['nmap'] = nmap_results
+
+    def _process_cloud_asset(self, asset: Dict[str, Any]) -> None:
+        """Process a cloud asset with all applicable tools."""
+        cloud_id = asset['identifier']
+        
+        # Cloud-specific enumeration
+        if 'cloudenum' in self.tools:
+            cloud_results = self.cloudenum.scan_domain(cloud_id)
+            if cloud_results:
+                asset['osint_data']['cloud'] = cloud_results
+                
+                # Add relationships for discovered resources
+                for resource_type, resources in cloud_results.items():
+                    for resource in resources:
+                        self._add_relationship(cloud_id, resource, f'has_{resource_type}', 'Cloud enumeration')
+
+    def run_scan(self) -> Dict[str, Any]:
+        """
+        Run the appropriate scan based on target type and scan type.
+        """
+        try:
+            # Start with initial target
+            self._process_domain_asset(self.target, self.target_type, is_initial_target=True)
+            
+            # Continue processing new assets until no new ones are discovered
+            while True:
+                new_assets = set(self.results['assets'].keys()) - self.processed_assets
+                if not new_assets:
+                    break
+                    
+                for asset_id in new_assets:
+                    asset = self.results['assets'][asset_id]
+                    self._process_asset(asset_id, asset['type'], 'recursive_discovery')
+            
+            # Store results to JSON file
+            self._store_results()
+            
+            self.results['scan_info']['status'] = 'completed'
+            return self.results
+            
+        except Exception as e:
+            self.results['scan_info']['status'] = 'failed'
+            self.results['scan_info']['error'] = str(e)
+            self._store_results()
+            raise
+
+    def _store_results(self) -> None:
+        """Store all scan results in a JSON file."""
+        # Create results directory if it doesn't exist
+        os.makedirs('results', exist_ok=True)
+        
+        # Generate filename based on target and timestamp
+        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+        filename = f"results/scan_{self.target}_{timestamp}.json"
+        
+        # Write results to file
+        with open(filename, 'w') as f:
+            json.dump(self.results, f, indent=2, default=str)
+        
+        print(f"Results saved to {filename}")
+
+def main():
+    # Example usage
+    target = "bcnsoluciona.com"
+    target_type = "domain"
+    scan_type = "passive"
+    tools = ['shodan', 'subfinder', 'wappalyzer', 'dnsrecon']  # Example subset of tools
+    
+    recon = AutomatedRecon(target, target_type, scan_type, tools)
+    results = recon.run_scan()
+    print(json.dumps(results, indent=2))
+
+if __name__ == "__main__":
+    main() 

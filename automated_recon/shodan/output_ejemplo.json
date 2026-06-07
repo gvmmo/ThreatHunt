@@ -1,0 +1,146 @@
+{
+    "metadata": {
+        "organization": "Example Corp",
+        "timestamp": "2025-03-24T16:13:25.209980",
+        "total_results": 2
+    },
+    "hosts": [
+        {
+            "ip": "203.0.113.10",
+            "organization": "Example Corp Ltd",
+            "hostnames": [
+                "web1.example.com",
+                "mail.example.com"
+            ],
+            "domains": [
+                "example.com"
+            ],
+            "timestamp": "2024-01-14T22:15:31.432Z",
+            "isp": "Example Internet Services",
+            "asn": "AS12345",
+            "all_ports": [
+                22,
+                80,
+                443,
+                8080
+            ],
+            "os": "Ubuntu 20.04",
+            "last_update": "2024-01-14T22:15:31.432Z",
+            "tags": [
+                "web"
+            ],
+            "services": [
+                {
+                    "port": 443,
+                    "transport": "tcp",
+                    "module": "https",
+                    "data": "HTTP/1.1 200 OK\r\nServer: nginx/1.18.0\r\n",
+                    "timestamp": "2024-01-14T22:15:31.432Z",
+                    "product": "nginx",
+                    "version": "1.18.0",
+                    "cpe": [
+                        "cpe:/a:nginx:nginx:1.18.0"
+                    ],
+                    "vulns": {
+                        "CVE-2021-23017": {
+                            "summary": "Descripción detallada de la vulnerabilidad...",
+                            "cvss_v3": 7.5
+                        }
+                    },
+                    "opts": {},
+                    "hash": 123456789,
+                    "location": {
+                        "city": "San Francisco",
+                        "region_code": "CA",
+                        "area_code": 415,
+                        "longitude": -122.4194,
+                        "country_code3": "USA",
+                        "country_name": "United States",
+                        "postal_code": "94105",
+                        "dma_code": 807,
+                        "country_code": "US",
+                        "latitude": 37.7749
+                    },
+                    "domains": [
+                        "example.com"
+                    ],
+                    "hostnames": [
+                        "web1.example.com",
+                        "mail.example.com"
+                    ]
+                },
+                {
+                    "port": 22,
+                    "transport": "tcp",
+                    "module": "ssh",
+                    "data": "SSH-2.0-OpenSSH_8.2p1 Ubuntu-4ubuntu0.2",
+                    "timestamp": "2024-01-14T22:15:30.432Z",
+                    "product": "",
+                    "version": "",
+                    "cpe": [],
+                    "vulns": [],
+                    "opts": {},
+                    "hash": 987654321,
+                    "location": {},
+                    "domains": [],
+                    "hostnames": []
+                }
+            ]
+        },
+        {
+            "ip": "203.0.113.11",
+            "organization": "Example Corp Ltd",
+            "hostnames": [
+                "db1.example.com"
+            ],
+            "domains": [
+                "example.com"
+            ],
+            "timestamp": "2024-01-14T20:12:15.123Z",
+            "isp": "Example Internet Services",
+            "asn": "AS12345",
+            "all_ports": [
+                22,
+                5432
+            ],
+            "os": "Ubuntu 20.04",
+            "last_update": "2024-01-14T20:12:15.123Z",
+            "tags": [
+                "database"
+            ],
+            "services": [
+                {
+                    "port": 5432,
+                    "transport": "tcp",
+                    "module": "postgresql",
+                    "data": "PostgreSQL 13.2 on x86_64-pc-linux-gnu",
+                    "timestamp": "2024-01-14T20:12:15.123Z",
+                    "product": "PostgreSQL",
+                    "version": "13.2",
+                    "cpe": [],
+                    "vulns": {},
+                    "opts": {},
+                    "hash": 456789123,
+                    "location": {
+                        "city": "San Francisco",
+                        "region_code": "CA",
+                        "area_code": 415,
+                        "longitude": -122.4194,
+                        "country_code3": "USA",
+                        "country_name": "United States",
+                        "postal_code": "94105",
+                        "dma_code": 807,
+                        "country_code": "US",
+                        "latitude": 37.7749
+                    },
+                    "domains": [
+                        "example.com"
+                    ],
+                    "hostnames": [
+                        "db1.example.com"
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,225 @@
+{
+    "metadata": {
+        "keywords": [
+            "test"
+        ],
+        "timestamp_start": 1743617634.1739194,
+        "timestamp_end": 1743617639.0979965,
+        "duration_seconds": "4.92",
+        "status": "partial"
+    },
+    "statistics": {
+        "total_findings": 37,
+        "findings_by_provider": {
+            "aws": {
+                "total": 37,
+                "s3_buckets": {
+                    "total": 37,
+                    "public": 2,
+                    "protected": 35
+                },
+                "other": 0
+            },
+            "azure": {
+                "total": 0,
+                "storage_accounts": {
+                    "total": 0,
+                    "public": 0,
+                    "protected": 0
+                },
+                "containers": {
+                    "total": 0,
+                    "public": 0,
+                    "protected": 0
+                },
+                "other": 0
+            },
+            "gcp": {
+                "total": 0,
+                "storage_buckets": {
+                    "total": 0,
+                    "public": 0,
+                    "protected": 0
+                },
+                "other": 0
+            }
+        }
+    },
+    "findings": {
+        "aws": {
+            "s3_buckets": {
+                "public": [
+                    {
+                        "target": "http://test-02.s3.amazonaws.com/",
+                        "message": "open s3 bucket"
+                    },
+                    {
+                        "target": "http://test2.s3.amazonaws.com/",
+                        "message": "open s3 bucket"
+                    }
+                ],
+                "protected": [
+                    {
+                        "target": "http://test.s3.amazonaws.com/",
+                        "message": "protected s3 bucket"
+                    },
+                    {
+                        "target": "http://test0.s3.amazonaws.com/",
+                        "message": "protected s3 bucket"
+                    },
+                    {
+                        "target": "http://test-0.s3.amazonaws.com/",
+                        "message": "protected s3 bucket"
+                    },
+                    {
+                        "target": "http://0test.s3.amazonaws.com/",
+                        "message": "protected s3 bucket"
+                    },
+                    {
+                        "target": "http://0.test.s3.amazonaws.com/",
+                        "message": "protected s3 bucket"
+                    },
+                    {
+                        "target": "http://0-test.s3.amazonaws.com/",
+                        "message": "protected s3 bucket"
+                    },
+                    {
+                        "target": "http://test.001.s3.amazonaws.com/",
+                        "message": "protected s3 bucket"
+                    },
+                    {
+                        "target": "http://test-001.s3.amazonaws.com/",
+                        "message": "protected s3 bucket"
+                    },
+                    {
+                        "target": "http://001test.s3.amazonaws.com/",
+                        "message": "protected s3 bucket"
+                    },
+                    {
+                        "target": "http://001.test.s3.amazonaws.com/",
+                        "message": "protected s3 bucket"
+                    },
+                    {
+                        "target": "http://001-test.s3.amazonaws.com/",
+                        "message": "protected s3 bucket"
+                    },
+                    {
+                        "target": "http://test002.s3.amazonaws.com/",
+                        "message": "protected s3 bucket"
+                    },
+                    {
+                        "target": "http://test-002.s3.amazonaws.com/",
+                        "message": "protected s3 bucket"
+                    },
+                    {
+                        "target": "http://test003.s3.amazonaws.com/",
+                        "message": "protected s3 bucket"
+                    },
+                    {
+                        "target": "http://test-003.s3.amazonaws.com/",
+                        "message": "protected s3 bucket"
+                    },
+                    {
+                        "target": "http://003-test.s3.amazonaws.com/",
+                        "message": "protected s3 bucket"
+                    },
+                    {
+                        "target": "http://test01.s3.amazonaws.com/",
+                        "message": "protected s3 bucket"
+                    },
+                    {
+                        "target": "http://test.01.s3.amazonaws.com/",
+                        "message": "protected s3 bucket"
+                    },
+                    {
+                        "target": "http://test-01.s3.amazonaws.com/",
+                        "message": "protected s3 bucket"
+                    },
+                    {
+                        "target": "http://01test.s3.amazonaws.com/",
+                        "message": "protected s3 bucket"
+                    },
+                    {
+                        "target": "http://01.test.s3.amazonaws.com/",
+                        "message": "protected s3 bucket"
+                    },
+                    {
+                        "target": "http://01-test.s3.amazonaws.com/",
+                        "message": "protected s3 bucket"
+                    },
+                    {
+                        "target": "http://test02.s3.amazonaws.com/",
+                        "message": "protected s3 bucket"
+                    },
+                    {
+                        "target": "http://test.02.s3.amazonaws.com/",
+                        "message": "protected s3 bucket"
+                    },
+                    {
+                        "target": "http://02-test.s3.amazonaws.com/",
+                        "message": "protected s3 bucket"
+                    },
+                    {
+                        "target": "http://test03.s3.amazonaws.com/",
+                        "message": "protected s3 bucket"
+                    },
+                    {
+                        "target": "http://test-03.s3.amazonaws.com/",
+                        "message": "protected s3 bucket"
+                    },
+                    {
+                        "target": "http://03test.s3.amazonaws.com/",
+                        "message": "protected s3 bucket"
+                    },
+                    {
+                        "target": "http://03.test.s3.amazonaws.com/",
+                        "message": "protected s3 bucket"
+                    },
+                    {
+                        "target": "http://test1.s3.amazonaws.com/",
+                        "message": "protected s3 bucket"
+                    },
+                    {
+                        "target": "http://test.1.s3.amazonaws.com/",
+                        "message": "protected s3 bucket"
+                    },
+                    {
+                        "target": "http://test-1.s3.amazonaws.com/",
+                        "message": "protected s3 bucket"
+                    },
+                    {
+                        "target": "http://1test.s3.amazonaws.com/",
+                        "message": "protected s3 bucket"
+                    },
+                    {
+                        "target": "http://1.test.s3.amazonaws.com/",
+                        "message": "protected s3 bucket"
+                    },
+                    {
+                        "target": "http://1-test.s3.amazonaws.com/",
+                        "message": "protected s3 bucket"
+                    }
+                ]
+            },
+            "other": []
+        },
+        "azure": {
+            "storage_accounts": {
+                "public": [],
+                "protected": []
+            },
+            "containers": {
+                "public": [],
+                "protected": []
+            },
+            "other": []
+        },
+        "gcp": {
+            "storage_buckets": {
+                "public": [],
+                "protected": []
+            },
+            "other": []
+        }
+    }
+}

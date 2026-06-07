@@ -1,0 +1,844 @@
+{
+    "scan_info": {
+      "target": "bcnsoluciona.com",
+      "target_type": "domain",
+      "scan_type": "passive",
+      "timestamp": "2025-04-30T13:57:15.351976",
+      "status": "completed",
+      "tools_used": [
+        "shodan",
+        "cloudenum",
+        "subfinder",
+        "wappalyzer",
+        "dnsrecon"
+      ]
+    },
+    "assets": {
+      "ips": [
+        {
+          "ip": "178.211.133.61",
+          "domain": "bcnsoluciona.com",
+          "timestamp": "2025-04-30T13:57:17.266283"
+        }
+      ],
+      "domains": [
+        {
+          "domain": "www.asfconsultores.bcnsoluciona.com",
+          "source": "subfinder",
+          "timestamp": "2025-04-30T13:57:18.925653"
+        },
+        {
+          "domain": "www.staging.bcnsoluciona.com",
+          "source": "subfinder",
+          "timestamp": "2025-04-30T13:57:18.925669"
+        },
+        {
+          "domain": "cpcontacts.bcnsoluciona.com",
+          "source": "subfinder",
+          "timestamp": "2025-04-30T13:57:18.925677"
+        },
+        {
+          "domain": "cpanel.bcnsoluciona.com",
+          "source": "wappalyzer",
+          "timestamp": "2025-04-30T13:57:25.780293",
+          "technologies": []
+        },
+        {
+          "domain": "webdisk.bcnsoluciona.com",
+          "source": "subfinder",
+          "timestamp": "2025-04-30T13:57:18.925681"
+        },
+        {
+          "domain": "webmail.bcnsoluciona.com",
+          "source": "wappalyzer",
+          "timestamp": "2025-04-30T13:57:25.513941",
+          "technologies": []
+        },
+        {
+          "domain": "www.asfconsultors.bcnsoluciona.com",
+          "source": "subfinder",
+          "timestamp": "2025-04-30T13:57:18.925684"
+        },
+        {
+          "domain": "asfconsultores.bcnsoluciona.com",
+          "source": "subfinder",
+          "timestamp": "2025-04-30T13:57:18.925685"
+        },
+        {
+          "domain": "aepso.bcnsoluciona.com",
+          "source": "subfinder",
+          "timestamp": "2025-04-30T13:57:18.925687"
+        },
+        {
+          "domain": "www.bcnsoluciona.com",
+          "source": "wappalyzer",
+          "timestamp": "2025-04-30T13:57:24.541242",
+          "technologies": [
+            {
+              "name": "PHP",
+              "version": "unknown",
+              "categories": [
+                "Programming languages"
+              ]
+            },
+            {
+              "name": "reCAPTCHA",
+              "version": "unknown",
+              "categories": [
+                "Security"
+              ]
+            },
+            {
+              "name": "MySQL",
+              "version": "unknown",
+              "categories": [
+                "Databases"
+              ]
+            },
+            {
+              "name": "jQuery",
+              "version": "3.7.1",
+              "categories": [
+                "JavaScript libraries"
+              ]
+            },
+            {
+              "name": "Litespeed Cache",
+              "version": "unknown",
+              "categories": [
+                "Caching"
+              ]
+            },
+            {
+              "name": "TrackJs",
+              "version": "unknown",
+              "categories": [
+                "Analytics"
+              ]
+            },
+            {
+              "name": "WordPress",
+              "version": "unknown",
+              "categories": [
+                "CMS",
+                "Blogs"
+              ]
+            },
+            {
+              "name": "Yoast SEO",
+              "version": "25.0",
+              "categories": [
+                "SEO"
+              ]
+            }
+          ]
+        },
+        {
+          "domain": "www.stage.bcnsoluciona.com",
+          "source": "subfinder",
+          "timestamp": "2025-04-30T13:57:18.925690"
+        },
+        {
+          "domain": "mail.bcnsoluciona.com",
+          "source": "wappalyzer",
+          "timestamp": "2025-04-30T13:57:26.483193",
+          "technologies": [
+            {
+              "name": "PHP",
+              "version": "unknown",
+              "categories": [
+                "Programming languages"
+              ]
+            },
+            {
+              "name": "reCAPTCHA",
+              "version": "unknown",
+              "categories": [
+                "Security"
+              ]
+            },
+            {
+              "name": "MySQL",
+              "version": "unknown",
+              "categories": [
+                "Databases"
+              ]
+            },
+            {
+              "name": "jQuery",
+              "version": "3.7.1",
+              "categories": [
+                "JavaScript libraries"
+              ]
+            },
+            {
+              "name": "Litespeed Cache",
+              "version": "unknown",
+              "categories": [
+                "Caching"
+              ]
+            },
+            {
+              "name": "TrackJs",
+              "version": "unknown",
+              "categories": [
+                "Analytics"
+              ]
+            },
+            {
+              "name": "WordPress",
+              "version": "unknown",
+              "categories": [
+                "CMS",
+                "Blogs"
+              ]
+            },
+            {
+              "name": "Yoast SEO",
+              "version": "25.0",
+              "categories": [
+                "SEO"
+              ]
+            }
+          ]
+        },
+        {
+          "domain": "asfconsultors.bcnsoluciona.com",
+          "source": "subfinder",
+          "timestamp": "2025-04-30T13:57:18.925693"
+        },
+        {
+          "domain": "websegura.bcnsoluciona.com",
+          "source": "subfinder",
+          "timestamp": "2025-04-30T13:57:18.925694"
+        },
+        {
+          "domain": "www.aepso.bcnsoluciona.com",
+          "source": "subfinder",
+          "timestamp": "2025-04-30T13:57:18.925696"
+        },
+        {
+          "domain": "ngcybersecurity.io.bcnsoluciona.com",
+          "source": "wappalyzer",
+          "timestamp": "2025-04-30T13:57:25.093351",
+          "technologies": [
+            {
+              "name": "PHP",
+              "version": "7.4.33",
+              "categories": [
+                "Programming languages"
+              ]
+            },
+            {
+              "name": "jQuery Migrate",
+              "version": "3.4.1",
+              "categories": [
+                "JavaScript libraries"
+              ]
+            },
+            {
+              "name": "MySQL",
+              "version": "unknown",
+              "categories": [
+                "Databases"
+              ]
+            },
+            {
+              "name": "jQuery",
+              "version": "3.7.1",
+              "categories": [
+                "JavaScript libraries"
+              ]
+            },
+            {
+              "name": "Litespeed Cache",
+              "version": "unknown",
+              "categories": [
+                "Caching"
+              ]
+            },
+            {
+              "name": "WordPress",
+              "version": "6.8",
+              "categories": [
+                "CMS",
+                "Blogs"
+              ]
+            },
+            {
+              "name": "Google Font API",
+              "version": "unknown",
+              "categories": [
+                "Font scripts"
+              ]
+            },
+            {
+              "name": "Yoast SEO",
+              "version": "24.9",
+              "categories": [
+                "SEO"
+              ]
+            }
+          ]
+        },
+        {
+          "domain": "www.ngcybersecurity.io.bcnsoluciona.com",
+          "source": "wappalyzer",
+          "timestamp": "2025-04-30T13:57:24.037500",
+          "technologies": [
+            {
+              "name": "PHP",
+              "version": "7.4.33",
+              "categories": [
+                "Programming languages"
+              ]
+            },
+            {
+              "name": "jQuery Migrate",
+              "version": "3.4.1",
+              "categories": [
+                "JavaScript libraries"
+              ]
+            },
+            {
+              "name": "MySQL",
+              "version": "unknown",
+              "categories": [
+                "Databases"
+              ]
+            },
+            {
+              "name": "jQuery",
+              "version": "3.7.1",
+              "categories": [
+                "JavaScript libraries"
+              ]
+            },
+            {
+              "name": "Litespeed Cache",
+              "version": "unknown",
+              "categories": [
+                "Caching"
+              ]
+            },
+            {
+              "name": "WordPress",
+              "version": "6.8",
+              "categories": [
+                "CMS",
+                "Blogs"
+              ]
+            },
+            {
+              "name": "Google Font API",
+              "version": "unknown",
+              "categories": [
+                "Font scripts"
+              ]
+            },
+            {
+              "name": "Yoast SEO",
+              "version": "24.9",
+              "categories": [
+                "SEO"
+              ]
+            }
+          ]
+        },
+        {
+          "domain": "cpcalendars.bcnsoluciona.com",
+          "source": "subfinder",
+          "timestamp": "2025-04-30T13:57:18.925700"
+        },
+        {
+          "domain": "stage.bcnsoluciona.com",
+          "source": "subfinder",
+          "timestamp": "2025-04-30T13:57:18.925702"
+        },
+        {
+          "domain": "autodiscover.bcnsoluciona.com",
+          "source": "subfinder",
+          "timestamp": "2025-04-30T13:57:18.925704"
+        },
+        {
+          "domain": "staging.bcnsoluciona.com",
+          "source": "subfinder",
+          "timestamp": "2025-04-30T13:57:18.925705"
+        },
+        {
+          "domain": "www.websegura.bcnsoluciona.com",
+          "source": "subfinder",
+          "timestamp": "2025-04-30T13:57:18.925709"
+        }
+      ],
+      "cloud_assets": [],
+      "web_apps": []
+    },
+    "dns_records": {
+      "a_records": [
+        {
+          "domain": "bcnsoluciona.com",
+          "ip": "178.211.133.61",
+          "zone_server": null,
+          "timestamp": "2025-04-30T13:57:17.266286"
+        }
+      ],
+      "cname_records": [],
+      "mx_records": [
+        {
+          "domain": null,
+          "exchange": null,
+          "priority": null,
+          "zone_server": null,
+          "timestamp": "2025-04-30T13:57:17.266288"
+        },
+        {
+          "domain": null,
+          "exchange": null,
+          "priority": null,
+          "zone_server": null,
+          "timestamp": "2025-04-30T13:57:17.266289"
+        },
+        {
+          "domain": null,
+          "exchange": null,
+          "priority": null,
+          "zone_server": null,
+          "timestamp": "2025-04-30T13:57:17.266291"
+        },
+        {
+          "domain": null,
+          "exchange": null,
+          "priority": null,
+          "zone_server": null,
+          "timestamp": "2025-04-30T13:57:17.266292"
+        },
+        {
+          "domain": null,
+          "exchange": null,
+          "priority": null,
+          "zone_server": null,
+          "timestamp": "2025-04-30T13:57:17.266293"
+        },
+        {
+          "domain": null,
+          "exchange": null,
+          "priority": null,
+          "zone_server": null,
+          "timestamp": "2025-04-30T13:57:17.266294"
+        },
+        {
+          "domain": null,
+          "exchange": null,
+          "priority": null,
+          "zone_server": null,
+          "timestamp": "2025-04-30T13:57:17.266294"
+        },
+        {
+          "domain": null,
+          "exchange": null,
+          "priority": null,
+          "zone_server": null,
+          "timestamp": "2025-04-30T13:57:17.266295"
+        }
+      ],
+      "ns_records": [
+        {
+          "domain": null,
+          "nameserver": "dns1.raiolanetworks.es",
+          "zone_server": null,
+          "timestamp": "2025-04-30T13:57:17.266296"
+        },
+        {
+          "domain": null,
+          "nameserver": "dns2.raiolanetworks.es",
+          "zone_server": null,
+          "timestamp": "2025-04-30T13:57:17.266298"
+        },
+        {
+          "domain": null,
+          "nameserver": "dns3.raiolanetworks.es",
+          "zone_server": null,
+          "timestamp": "2025-04-30T13:57:17.266299"
+        }
+      ],
+      "txt_records": [
+        {
+          "domain": "bcnsoluciona.com",
+          "data": "v=spf1 include:spf.protection.outlook.com +include:spf.raiolanetworks.com +ip4:51.83.52.196 -all",
+          "zone_server": null,
+          "timestamp": "2025-04-30T13:57:17.266300"
+        },
+        {
+          "domain": "bcnsoluciona.com",
+          "data": "google-site-verification=QerHTxgCf7leNtRxV26NWkCpTgHWeWbsODkQYsl88D8",
+          "zone_server": null,
+          "timestamp": "2025-04-30T13:57:17.266340"
+        },
+        {
+          "domain": "_dmarc.bcnsoluciona.com",
+          "data": "v=DMARC1; p=none; sp=none; rf=afrf; pct=100; ri=86400;rua=mailto:dmarc@bcnsoluciona.com",
+          "zone_server": null,
+          "timestamp": "2025-04-30T13:57:17.266364"
+        }
+      ],
+      "zone_transfers": []
+    },
+    "findings": {
+      "vulnerabilities": [],
+      "misconfigurations": [
+        {
+          "type": "exposed_environment",
+          "severity": "medium",
+          "description": "Exposed development/staging environment found: www.staging.bcnsoluciona.com",
+          "target": "www.staging.bcnsoluciona.com",
+          "timestamp": "2025-04-30T13:57:18.925675"
+        },
+        {
+          "type": "exposed_environment",
+          "severity": "medium",
+          "description": "Exposed development/staging environment found: staging.bcnsoluciona.com",
+          "target": "staging.bcnsoluciona.com",
+          "timestamp": "2025-04-30T13:57:18.925707"
+        }
+      ],
+      "exposed_data": []
+    },
+    "relationships": [],
+    "raw_results": {
+      "dnsrecon": {
+        "scan_info": {
+          "timestamp": "2025-04-30T13:57:17.266215",
+          "domain": "bcnsoluciona.com",
+          "nameservers": []
+        },
+        "records": {
+          "a": [
+            {
+              "name": "bcnsoluciona.com",
+              "domain": "bcnsoluciona.com",
+              "type": "A",
+              "address": "178.211.133.61"
+            }
+          ],
+          "aaaa": [],
+          "mx": [
+            {
+              "domain": "bcnsoluciona.com",
+              "type": "MX",
+              "address": "52.101.73.16",
+              "exchange": "bcnsoluciona-com.mail.protection.outlook.com"
+            },
+            {
+              "domain": "bcnsoluciona.com",
+              "type": "MX",
+              "address": "52.101.68.25",
+              "exchange": "bcnsoluciona-com.mail.protection.outlook.com"
+            },
+            {
+              "domain": "bcnsoluciona.com",
+              "type": "MX",
+              "address": "52.101.73.28",
+              "exchange": "bcnsoluciona-com.mail.protection.outlook.com"
+            },
+            {
+              "domain": "bcnsoluciona.com",
+              "type": "MX",
+              "address": "52.101.73.11",
+              "exchange": "bcnsoluciona-com.mail.protection.outlook.com"
+            },
+            {
+              "domain": "bcnsoluciona.com",
+              "type": "MX",
+              "address": "2a01:111:f403:ca09::b",
+              "exchange": "bcnsoluciona-com.mail.protection.outlook.com"
+            },
+            {
+              "domain": "bcnsoluciona.com",
+              "type": "MX",
+              "address": "2a01:111:f403:ca09::a",
+              "exchange": "bcnsoluciona-com.mail.protection.outlook.com"
+            },
+            {
+              "domain": "bcnsoluciona.com",
+              "type": "MX",
+              "address": "2a01:111:f403:ca04::8",
+              "exchange": "bcnsoluciona-com.mail.protection.outlook.com"
+            },
+            {
+              "domain": "bcnsoluciona.com",
+              "type": "MX",
+              "address": "2a01:111:f403:ca04::f",
+              "exchange": "bcnsoluciona-com.mail.protection.outlook.com"
+            }
+          ],
+          "ns": [
+            {
+              "domain": "bcnsoluciona.com",
+              "type": "NS",
+              "address": "138.68.123.207",
+              "target": "dns1.raiolanetworks.es",
+              "Version": "root@bh-centos-8.dev.cpanel.net)\"",
+              "recursive": "True"
+            },
+            {
+              "domain": "bcnsoluciona.com",
+              "type": "NS",
+              "address": "52.17.24.175",
+              "target": "dns2.raiolanetworks.es",
+              "Version": "root@bh-centos-8.dev.cpanel.net)\"",
+              "recursive": "True"
+            },
+            {
+              "domain": "bcnsoluciona.com",
+              "type": "NS",
+              "address": "5.135.120.99",
+              "target": "dns3.raiolanetworks.es",
+              "Version": "root@bh-centos-8.dev.cpanel.net)\"",
+              "recursive": "True"
+            }
+          ],
+          "soa": [
+            {
+              "domain": "bcnsoluciona.com",
+              "type": "SOA",
+              "mname": "dns1.raiolanetworks.es",
+              "address": "138.68.123.207"
+            }
+          ],
+          "txt": [
+            {
+              "name": "bcnsoluciona.com",
+              "domain": "bcnsoluciona.com",
+              "type": "TXT",
+              "strings": "v=spf1 include:spf.protection.outlook.com +include:spf.raiolanetworks.com +ip4:51.83.52.196 -all"
+            },
+            {
+              "name": "bcnsoluciona.com",
+              "domain": "bcnsoluciona.com",
+              "type": "TXT",
+              "strings": "google-site-verification=QerHTxgCf7leNtRxV26NWkCpTgHWeWbsODkQYsl88D8"
+            },
+            {
+              "name": "_dmarc.bcnsoluciona.com",
+              "domain": "bcnsoluciona.com",
+              "type": "TXT",
+              "strings": "v=DMARC1; p=none; sp=none; rf=afrf; pct=100; ri=86400;rua=mailto:dmarc@bcnsoluciona.com"
+            }
+          ],
+          "srv": [
+            {
+              "name": "_caldavs._tcp.bcnsoluciona.com",
+              "domain": "bcnsoluciona.com",
+              "type": "SRV",
+              "address": "178.211.133.61",
+              "port": "2080",
+              "target": "com1031.raiolanetworks.es"
+            },
+            {
+              "name": "_caldavs._tcp.bcnsoluciona.com",
+              "domain": "bcnsoluciona.com",
+              "type": "SRV",
+              "address": "2a12:d280:100:61::",
+              "port": "2080",
+              "target": "com1031.raiolanetworks.es"
+            },
+            {
+              "name": "_carddav._tcp.bcnsoluciona.com",
+              "domain": "bcnsoluciona.com",
+              "type": "SRV",
+              "address": "178.211.133.61",
+              "port": "2079",
+              "target": "com1031.raiolanetworks.es"
+            },
+            {
+              "name": "_carddav._tcp.bcnsoluciona.com",
+              "domain": "bcnsoluciona.com",
+              "type": "SRV",
+              "address": "2a12:d280:100:61::",
+              "port": "2079",
+              "target": "com1031.raiolanetworks.es"
+            },
+            {
+              "name": "_carddavs._tcp.bcnsoluciona.com",
+              "domain": "bcnsoluciona.com",
+              "type": "SRV",
+              "address": "178.211.133.61",
+              "port": "2080",
+              "target": "com1031.raiolanetworks.es"
+            },
+            {
+              "name": "_carddavs._tcp.bcnsoluciona.com",
+              "domain": "bcnsoluciona.com",
+              "type": "SRV",
+              "address": "2a12:d280:100:61::",
+              "port": "2080",
+              "target": "com1031.raiolanetworks.es"
+            },
+            {
+              "name": "_caldav._tcp.bcnsoluciona.com",
+              "domain": "bcnsoluciona.com",
+              "type": "SRV",
+              "address": "178.211.133.61",
+              "port": "2079",
+              "target": "com1031.raiolanetworks.es"
+            },
+            {
+              "name": "_caldav._tcp.bcnsoluciona.com",
+              "domain": "bcnsoluciona.com",
+              "type": "SRV",
+              "address": "2a12:d280:100:61::",
+              "port": "2079",
+              "target": "com1031.raiolanetworks.es"
+            },
+            {
+              "name": "_autodiscover._tcp.bcnsoluciona.com",
+              "domain": "bcnsoluciona.com",
+              "type": "SRV",
+              "address": "208.74.121.152",
+              "port": "443",
+              "target": "cpanelemaildiscovery.cpanel.net"
+            },
+            {
+              "name": "_autodiscover._tcp.bcnsoluciona.com",
+              "domain": "bcnsoluciona.com",
+              "type": "SRV",
+              "address": "184.94.204.7",
+              "port": "443",
+              "target": "cpanelemaildiscovery.cpanel.net"
+            }
+          ],
+          "spf": [],
+          "zone_transfer": []
+        },
+        "statistics": {
+          "total_records": 26,
+          "record_types": {
+            "soa": 1,
+            "ns": 3,
+            "mx": 8,
+            "a": 1,
+            "txt": 3,
+            "srv": 10
+          }
+        }
+      },
+      "subfinder": [
+        {
+          "host": "www.asfconsultores.bcnsoluciona.com",
+          "input": "bcnsoluciona.com",
+          "source": "crtsh"
+        },
+        {
+          "host": "www.staging.bcnsoluciona.com",
+          "input": "bcnsoluciona.com",
+          "source": "alienvault"
+        },
+        {
+          "host": "cpcontacts.bcnsoluciona.com",
+          "input": "bcnsoluciona.com",
+          "source": "alienvault"
+        },
+        {
+          "host": "cpanel.bcnsoluciona.com",
+          "input": "bcnsoluciona.com",
+          "source": "hackertarget"
+        },
+        {
+          "host": "webdisk.bcnsoluciona.com",
+          "input": "bcnsoluciona.com",
+          "source": "hackertarget"
+        },
+        {
+          "host": "webmail.bcnsoluciona.com",
+          "input": "bcnsoluciona.com",
+          "source": "hackertarget"
+        },
+        {
+          "host": "www.asfconsultors.bcnsoluciona.com",
+          "input": "bcnsoluciona.com",
+          "source": "crtsh"
+        },
+        {
+          "host": "asfconsultores.bcnsoluciona.com",
+          "input": "bcnsoluciona.com",
+          "source": "crtsh"
+        },
+        {
+          "host": "aepso.bcnsoluciona.com",
+          "input": "bcnsoluciona.com",
+          "source": "crtsh"
+        },
+        {
+          "host": "www.bcnsoluciona.com",
+          "input": "bcnsoluciona.com",
+          "source": "sitedossier"
+        },
+        {
+          "host": "www.stage.bcnsoluciona.com",
+          "input": "bcnsoluciona.com",
+          "source": "crtsh"
+        },
+        {
+          "host": "mail.bcnsoluciona.com",
+          "input": "bcnsoluciona.com",
+          "source": "crtsh"
+        },
+        {
+          "host": "asfconsultors.bcnsoluciona.com",
+          "input": "bcnsoluciona.com",
+          "source": "crtsh"
+        },
+        {
+          "host": "websegura.bcnsoluciona.com",
+          "input": "bcnsoluciona.com",
+          "source": "crtsh"
+        },
+        {
+          "host": "www.aepso.bcnsoluciona.com",
+          "input": "bcnsoluciona.com",
+          "source": "crtsh"
+        },
+        {
+          "host": "ngcybersecurity.io.bcnsoluciona.com",
+          "input": "bcnsoluciona.com",
+          "source": "alienvault"
+        },
+        {
+          "host": "www.ngcybersecurity.io.bcnsoluciona.com",
+          "input": "bcnsoluciona.com",
+          "source": "alienvault"
+        },
+        {
+          "host": "cpcalendars.bcnsoluciona.com",
+          "input": "bcnsoluciona.com",
+          "source": "alienvault"
+        },
+        {
+          "host": "stage.bcnsoluciona.com",
+          "input": "bcnsoluciona.com",
+          "source": "crtsh"
+        },
+        {
+          "host": "autodiscover.bcnsoluciona.com",
+          "input": "bcnsoluciona.com",
+          "source": "crtsh"
+        },
+        {
+          "host": "staging.bcnsoluciona.com",
+          "input": "bcnsoluciona.com",
+          "source": "alienvault"
+        },
+        {
+          "host": "www.websegura.bcnsoluciona.com",
+          "input": "bcnsoluciona.com",
+          "source": "crtsh"
+        }
+      ],
+      "wappalyzer": {
+        "domain": "websegura.bcnsoluciona.com",
+        "error": "Failed to access website"
+      }
+    }
+  }
+  

@@ -1,0 +1,39 @@
+# Core dependencies
+python-dotenv>=1.0.0
+requests>=2.31.0
+typing-extensions>=4.7.1
+
+# FastAPI and dependencies
+fastapi>=0.104.1
+uvicorn>=0.24.0
+pydantic>=2.4.2
+python-multipart>=0.0.6
+
+# OSINT Tools
+shodan>=1.30.0
+python-whois>=0.8.0
+python-Wappalyzer>=0.3.1
+random-user-agent>=0.1.1
+python-nmap>=0.7.1  # Added for nmap scanning
+
+# Web Technologies
+urllib3>=2.0.7
+beautifulsoup4>=4.12.2
+lxml>=4.9.3
+
+# Data Processing
+pymongo==4.5.0  # Fixed version to ensure compatibility
+
+# Utilities
+python-dateutil>=2.8.2
+tqdm>=4.66.1
+colorama>=0.4.6
+
+# Security Tools
+dnspython>=2.4.2
+cryptography>=41.0.3
+pyOpenSSL>=23.2.0
+
+# Optional Dependencies
+# Uncomment if using MongoDB
+motor>=3.3.1  # Async MongoDB driver

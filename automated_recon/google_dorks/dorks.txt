@@ -1,0 +1,180 @@
+# dorks.txt
+# Lista de Google Dorks optimizada para scripts.
+# Reemplaza 'TARGET_DOMAIN' con el dominio objetivo en tu script.
+# ¡ÚSALOS DE FORMA RESPONSABLE Y ÉTICA!
+
+# --- Búsqueda de Tipos de Archivo Específicos ---
+site:TARGET_DOMAIN filetype:pdf
+site:TARGET_DOMAIN filetype:doc
+site:TARGET_DOMAIN filetype:docx
+site:TARGET_DOMAIN filetype:xls
+site:TARGET_DOMAIN filetype:xlsx
+site:TARGET_DOMAIN filetype:ppt
+site:TARGET_DOMAIN filetype:pptx
+site:TARGET_DOMAIN filetype:log
+site:TARGET_DOMAIN filetype:txt
+site:TARGET_DOMAIN filetype:cfg
+site:TARGET_DOMAIN filetype:conf
+site:TARGET_DOMAIN filetype:ini
+site:TARGET_DOMAIN filetype:sql
+site:TARGET_DOMAIN filetype:db
+site:TARGET_DOMAIN filetype:mdb
+site:TARGET_DOMAIN filetype:bak
+site:TARGET_DOMAIN filetype:bkf
+site:TARGET_DOMAIN filetype:bkp
+site:TARGET_DOMAIN filetype:old
+site:TARGET_DOMAIN filetype:backup
+site:TARGET_DOMAIN filetype:env
+site:TARGET_DOMAIN filetype:pem
+site:TARGET_DOMAIN filetype:crt
+site:TARGET_DOMAIN filetype:key
+site:TARGET_DOMAIN filetype:p12
+site:TARGET_DOMAIN filetype:pfx
+site:TARGET_DOMAIN filetype:asc
+site:TARGET_DOMAIN filetype:gpg
+site:TARGET_DOMAIN filetype:pgp
+site:TARGET_DOMAIN filetype:sh
+site:TARGET_DOMAIN filetype:bash
+site:TARGET_DOMAIN filetype:ps1
+site:TARGET_DOMAIN filetype:bat
+site:TARGET_DOMAIN filetype:yml
+site:TARGET_DOMAIN filetype:yaml
+site:TARGET_DOMAIN filetype:json
+site:TARGET_DOMAIN filetype:xml
+site:TARGET_DOMAIN filetype:csv
+site:TARGET_DOMAIN filetype:zip
+site:TARGET_DOMAIN filetype:tar
+site:TARGET_DOMAIN filetype:gz
+site:TARGET_DOMAIN filetype:tgz
+site:TARGET_DOMAIN filetype:rar
+site:TARGET_DOMAIN filetype:7z
+site:TARGET_DOMAIN filetype:dump
+site:TARGET_DOMAIN filetype:sql.gz
+site:TARGET_DOMAIN filetype:sql.zip
+site:TARGET_DOMAIN filetype:ora # Oracle config files
+
+# --- Búsqueda de Texto en URLs (inurl:) ---
+site:TARGET_DOMAIN inurl:login
+site:TARGET_DOMAIN inurl:signin
+site:TARGET_DOMAIN inurl:logon
+site:TARGET_DOMAIN inurl:register
+site:TARGET_DOMAIN inurl:signup
+site:TARGET_DOMAIN inurl:auth
+site:TARGET_DOMAIN inurl:admin
+site:TARGET_DOMAIN inurl:administrator
+site:TARGET_DOMAIN inurl:adm
+site:TARGET_DOMAIN inurl:mod
+site:TARGET_DOMAIN inurl:webadmin
+site:TARGET_DOMAIN inurl:panel
+site:TARGET_DOMAIN inurl:cpanel
+site:TARGET_DOMAIN inurl:dashboard
+site:TARGET_DOMAIN inurl:controlpanel
+site:TARGET_DOMAIN inurl:config
+site:TARGET_DOMAIN inurl:settings
+site:TARGET_DOMAIN inurl:setup
+site:TARGET_DOMAIN inurl:install
+site:TARGET_DOMAIN inurl:phpinfo
+site:TARGET_DOMAIN inurl:php.ini
+site:TARGET_DOMAIN inurl:web.config
+site:TARGET_DOMAIN inurl:wp-admin
+site:TARGET_DOMAIN inurl:wp-login
+site:TARGET_DOMAIN inurl:wp-config
+site:TARGET_DOMAIN inurl:jmx-console
+site:TARGET_DOMAIN inurl:web-console
+site:TARGET_DOMAIN inurl:cgi-bin
+site:TARGET_DOMAIN inurl:scripts
+site:TARGET_DOMAIN inurl:backup
+site:TARGET_DOMAIN inurl:dump
+site:TARGET_DOMAIN inurl:sql
+site:TARGET_DOMAIN inurl:db
+site:TARGET_DOMAIN inurl:database
+site:TARGET_DOMAIN inurl:passwd
+site:TARGET_DOMAIN inurl:password
+site:TARGET_DOMAIN inurl:pwd
+site:TARGET_DOMAIN inurl:/etc/
+site:TARGET_DOMAIN inurl:logs
+site:TARGET_DOMAIN inurl:trace
+site:TARGET_DOMAIN inurl:upload
+site:TARGET_DOMAIN inurl:download
+site:TARGET_DOMAIN inurl:export
+site:TARGET_DOMAIN inurl:import
+site:TARGET_DOMAIN inurl:root
+site:TARGET_DOMAIN inurl:confidential
+site:TARGET_DOMAIN inurl:private
+site:TARGET_DOMAIN inurl:secret
+site:TARGET_DOMAIN inurl:token
+site:TARGET_DOMAIN inurl:api
+site:TARGET_DOMAIN inurl:key
+site:TARGET_DOMAIN inurl:pass
+site:TARGET_DOMAIN inurl:ssh
+site:TARGET_DOMAIN inurl:ftp
+site:TARGET_DOMAIN inurl:sftp
+site:TARGET_DOMAIN inurl:shell
+site:TARGET_DOMAIN inurl:cmd
+site:TARGET_DOMAIN inurl:remote
+site:TARGET_DOMAIN inurl:server-status
+site:TARGET_DOMAIN inurl:server-info
+
+# --- Búsqueda de Texto en Títulos de Página (intitle:) ---
+site:TARGET_DOMAIN intitle:"index of"
+site:TARGET_DOMAIN intitle:"login" | intitle:"signin"
+site:TARGET_DOMAIN intitle:"admin" | intitle:"administration"
+site:TARGET_DOMAIN intitle:"dashboard"
+site:TARGET_DOMAIN intitle:"config" | intitle:"configuration"
+site:TARGET_DOMAIN intitle:"setup"
+site:TARGET_DOMAIN intitle:"install"
+site:TARGET_DOMAIN intitle:"phpinfo()"
+site:TARGET_DOMAIN intitle:"restricted" | intitle:"forbidden"
+site:TARGET_DOMAIN intitle:"error"
+site:TARGET_DOMAIN intitle:"warning"
+site:TARGET_DOMAIN intitle:"internal"
+site:TARGET_DOMAIN intitle:"backup"
+site:TARGET_DOMAIN intitle:"phpMyAdmin"
+site:TARGET_DOMAIN intitle:"cPanel"
+
+# --- Búsqueda de Texto en el Contenido de la Página (intext:) ---
+site:TARGET_DOMAIN intext:"username" | intext:"user id"
+site:TARGET_DOMAIN intext:"password" | intext:"contraseña"
+site:TARGET_DOMAIN intext:"login failed" | intext:"authentication failed"
+site:TARGET_DOMAIN intext:"error" | intext:"exception"
+site:TARGET_DOMAIN intext:"warning"
+site:TARGET_DOMAIN intext:"confidential" | intext:"proprietary"
+site:TARGET_DOMAIN intext:"internal use only"
+site:TARGET_DOMAIN intext:"do not distribute"
+site:TARGET_DOMAIN intext:"PHP Version"
+site:TARGET_DOMAIN intext:"MySQL" | intext:"MariaDB"
+site:TARGET_DOMAIN intext:"SQL Server"
+site:TARGET_DOMAIN intext:"Oracle"
+site:TARGET_DOMAIN intext:"PostgreSQL"
+site:TARGET_DOMAIN intext:"Index of" | intext:"Parent Directory"
+site:TARGET_DOMAIN intext:"Powered by"
+site:TARGET_DOMAIN intext:"private key"
+site:TARGET_DOMAIN intext:"access key"
+site:TARGET_DOMAIN intext:"secret key"
+site:TARGET_DOMAIN intext:"API key"
+site:TARGET_DOMAIN intext:"backup" | intext:"dump"
+site:TARGET_DOMAIN intext:"Copyright © 2025" # Adapta el año si es necesario
+
+# --- Combinaciones Comunes ---
+site:TARGET_DOMAIN intitle:"index of" intext:"Parent Directory"
+site:TARGET_DOMAIN intitle:"index of" "backup"
+site:TARGET_DOMAIN intitle:"index of" "*.sql" | intitle:"index of" "*.zip" | intitle:"index of" "*.bak"
+site:TARGET_DOMAIN filetype:log intext:password | intext:pass | intext:pwd
+site:TARGET_DOMAIN filetype:env "DB_PASSWORD" | "API_KEY" | "SECRET"
+site:TARGET_DOMAIN filetype:bak inurl:backup | inurl:db | inurl:sql
+site:TARGET_DOMAIN inurl:admin | inurl:login filetype:php | filetype:asp | filetype:aspx | filetype:jsp
+site:TARGET_DOMAIN inurl:config filetype:xml | filetype:json | filetype:yml | filetype:conf | filetype:cfg | filetype:ini
+site:TARGET_DOMAIN inurl:upload filetype:php | filetype:asp | filetype:jsp | filetype:aspx
+site:TARGET_DOMAIN intitle:"index of" "wp-content"
+site:TARGET_DOMAIN intitle:"index of" "/database/" | intitle:"index of" "/sql/" | intitle:"index of" "/db/"
+site:TARGET_DOMAIN intext:"phpinfo() security" filetype:php
+site:TARGET_DOMAIN filetype:txt | filetype:log "username" "password"
+
+# --- Búsqueda de Información del Dominio en Sitios Externos (Menos común para script directo, pero útil) ---
+# Tu script podría necesitar manejar estos de forma diferente ya que no usan site:TARGET_DOMAIN
+# site:pastebin.com "TARGET_DOMAIN"
+# site:github.com "TARGET_DOMAIN" "password" | "secret" | "api_key"
+# site:trello.com "TARGET_DOMAIN" "password"
+# site:*.s3.amazonaws.com "TARGET_DOMAIN"
+# site:storage.googleapis.com "TARGET_DOMAIN"
+# intext:"*@TARGET_DOMAIN" filetype:xls | filetype:csv | filetype:pdf # Buscar emails
