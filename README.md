@@ -19,7 +19,7 @@
 
 > 📹 Full platform walkthrough — registration → scan configuration → tool execution → report download.
 
-[![ThreatHunt Demo](https://img.youtube.com/vi/VIDEO_ID/maxresdefault.jpg)](https://www.youtube.com/watch?v=VIDEO_ID)
+[![ThreatHunt Demo](https://youtu.be/Q3JIIKOnUDI?si=nxfJkV5iQpmo5x1Z)
 
 > ⚠️ *Replace `VIDEO_ID` with the actual YouTube video ID before publishing.*
 
