@@ -73,17 +73,18 @@ class YourTool:
 ## Pull request process
 
 1. Make sure your branch is up to date with `dev`:
+
    ```bash
    git fetch origin
    git rebase origin/dev
    ```
-2. Push your branch:
+3. Push your branch:
    ```bash
    git push origin feature/your-feature-name
    ```
-3. Open a PR against `dev` on GitHub
-4. Fill in the PR template — describe what changed and why
-5. Wait for review from a maintainer
+4. Open a PR against `dev` on GitHub
+5. Fill in the PR template — describe what changed and why
+6. Wait for review from a maintainer
 
 ---
 
