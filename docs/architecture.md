@@ -99,7 +99,7 @@ flowchart LR
  
     AutoRecon --> Tools
  
-    subgraph Tools ["🔧 Tool Execution (sequential)"]
+    subgraph Tools ["Tool Execution (sequential)"]
         T1["Crt.sh"]
         T2["DNSRecon"]
         T3["Shodan"]
