@@ -8,11 +8,12 @@ Thanks for your interest in contributing to ThreatHunt. This document covers how
 
 1. **Fork** the repository on GitHub
 2. **Clone** your fork locally:
+
    ```bash
    git clone https://github.com/your-username/threathunt.git
    cd threathunt
    ```
-3. **Set up** the development environment:
+4. **Set up** the development environment:
    ```bash
    python3 -m venv venv
    source venv/bin/activate
