@@ -264,3 +264,5 @@ python run.py
 | Ayman Dghoughi Nouri | Infraestructura AWS · VPC y redes · MongoDB HA · WAF · S3 · Seguridad |
 | Ian Díaz | Desarrollo backend · Integración herramientas OSINT · Configuración MongoDB |
 | Amritpal Singh | Desarrollo frontend · UI/UX · Sistema de autenticación |
+
+DEEZ NUTTS
