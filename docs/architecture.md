@@ -175,12 +175,12 @@ flowchart TD
 
 ## MongoDB data model
 
-```
-scans        → scan metadata, status, timestamps, config
-assets       → discovered assets per scan (subdomains, IPs, services)
-relationships → links between assets
-users        → user accounts, hashed passwords, API keys per tool
-```
+| Collection | Description |
+|------------|-------------|
+| `scans` | Scan metadata, status, timestamps and config |
+| `assets` | Discovered assets per scan — subdomains, IPs, services |
+| `relationships` | Links between assets |
+| `users` | User accounts, hashed passwords, API keys per tool |
 
 ---
 
